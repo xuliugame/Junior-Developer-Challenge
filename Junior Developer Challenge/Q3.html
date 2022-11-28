@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+//Closure: 
+//In general, variables defined inside a function are not accessible outside the function.
+// But sometimes there is such a need, and closures are used. 
+//Closures are functions that can read variables inside other functions. 
+//This is the concept of closures. Closures allow us to access variables inside a function inside another function.
+
+// what is Currying Closure?
+//Currying is a technique that transforms a function that accepts multiple parameters into 
+//a function that accepts a single parameter "the first parameter of the original function", 
+//and returns a new function that accepts the remaining parameters and returns a result.
+
+//This is example you not using the currying function to get the x+y
+function sum(x,y){
+    return x + y;
+}
+sum(1,2)// you can get result 3
+
+// if you use Currying Closure function
+
+function sum1(x){
+    return function(y){
+        return x + y;
+    };
+}
+sum1(1)(2)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*remove padding and margin of body*/
+        html, body {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* header height and background color */
+        .header {
+            background: red;
+            height: 180px;
+        }
+
+        /* footer heigh and background color */
+        .footer {
+            background: lightblue;
+            height: 180px;
+        }
+
+       
+        /* main heght and background color */
+        .main {
+            background: yellow;
+            height: 400px;
+        }
+
+        /*aside Automatic line wrapping, the line wrapping width is the maximum value between 384px and 50vw, 
+        the purpose is to ensure that the line wraps below 768, and does not wrap above 768*/
+        .aside {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(max(384px, 50vw), 1fr));
+        }
+
+        /*main Automatic wrapping, the wrapping width is the minimum value between 640px and 100vw, the purpose is to ensure that the line wraps below 1280, 
+        and does not exceed the screen when the screen width is less than 640*/
+        
+        .main-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(640px, 100vw), 1fr));
+        }
+
+        /*aside top height and background color*/
+        .aside-top {
+            background: blue;
+            height: 200px;
+        }
+
+        /*aside bottom height background color*/
+        .aside-bottom {
+            background: green;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<!--  header and footer doesn't need to setting the layout by the grid, 
+because the width of header and footer  is fixed and will automatically change according
+ to the width of the browser. So, just need to setting the main and Aside top - bottton -->
+<div class="header">  
+    header
+</div>
+
+<!-- use main-container to wrapped up the main aside top and bott for setting layout 
+    when the browser width gets smaller.   -->
+<div class="main-container">
+    <div class="main">
+        main
+    </div>
+    <!-- use aside  to wrapped up the aside top and bott for setting layout 
+    when the browser width gets smaller than 640px.-->
+    <div class="aside">
+        <div class="aside-top">
+            aside top
+        </div>
+        <div class="aside-bottom">
+            aside bottom
+        </div>
+    </div>
+</div>
+<div class="footer">
+    footer
+</div>
+<!-- for this part I was first to try to use media queries, but I saw the request ask me only make this layout by use grid. 
+This is a bit of a challenge for me. Because of past experience, the challenge of layout with different widths and heights 
+is to use media queries. This part is pretty easy for me if media queries are allowed, but needing to do it with css 
+techniques that I haven't used is a bit of a challenge. I used the resources given by doc to learn how to use grid. Then I watched some 
+youtube videos to learn how to use grid layout. It took me almost four hours to complete this part. The main difficulty is if you use the grid 
+layout to complete the requirements. Because I am not yet proficient in grid. But I still managed to complete this part by many failed attempts.
+ Also let me learn a new css technology. And know It also taught me that grid is very suitable for two-dimensional layout, 
+ which can control the arrangement and alignment of rows and columns. Although this part has certain challenges, the whole is easy, because I know what 
+ I have to do and have a precise goal for the first part. -->
+</body>
+</html>

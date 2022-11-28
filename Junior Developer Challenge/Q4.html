@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// the code before fix
+
+function count() {
+	let counter;
+	for (counter = 0; counter < 3; counter++) {
+    	setTimeout(function () {
+        	console.log('counter value is ' + counter);
+    	}, 1000);
+	}
+}
+count();
+
+
+//The reason why this code is problematic is that the counter and the anonymous function are in the same scope,
+// so the counter can be directly accessed in the anonymous function, and a new anonymous function body and scope
+// will be generated every time setTimeout is executed, so the anonymous function is executed regularly 
+//There will be no problem when calling console.log and passing the value.
+
+    // after fix
+        function count() {
+        let counter;
+        for (counter = 0; counter < 3; counter++) {
+            set(counter);
+        }
+        }
+        function set(counter){
+        setTimeout(function () {
+                console.log('counter value is ' + counter);
+            }, 1000);
+        }
+        count();
+
+    //Other way
+
+    //setTimeout The program has been delayed, and the final output counter is 3. 
+    //The modification is as follows, timing first, and then changing the counter
+        function count() {
+        let counter;
+        setTimeout(function () {
+        for (counter = 0; counter < 3; counter++) { 
+                console.log('counter value is ' + counter); 
+        } 
+        }, 1000);
+        }
+        count();
+
+
+
+
+    </script>
+</body>
+</html>

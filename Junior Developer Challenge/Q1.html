@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    foo = 3; //Missing keywords to define variable, need to be change to var foo = 3 or let foo =3;
+    bar = false; //Missing keywords to define variable, need to be change to var bar = false or let bar = false; 
+
+    const everyday = new Date();
+    // Question: affter I review this all code for this part. I don't see this line of code being tried in the code below. 
+    //So I'm confused, I don't know what this line of code use for. After I modified the other codes behind, I felt that this line of code was meaningless. So it should be removed.
+   
+   //Because foo = 3 when the variable was declared before, it is impossible for foo to be equal to String three. 
+   //So it can be changed to foo == 3, or equal to other numbers, or foo = "3", but it is not necessary. 
+   //So it should be changed to foo == 3.
+    if (foo == 'three') {
+    var obj = { 
+    hello: 123, 
+    world: 456 
+    };
+    // The Object variable obj does not have a length attribute. So need use object.keys() to get the key array and get the length
+    for (let i = 0, i < obj.length; ++i) {
+    
+    document.appendChild(document.createElement('div')); 
+    // The getElementById function is provided by the browser. It searches for elements according to the id of the dom element. However, the id was not declared as 'xyz' when the createElement element was created above. It should be modified as follows
+    // var dom = document. createElement('div');
+    // dom.id = 'xyz';
+    // document.getElementsByTagName("body")[0].appendChild(dom);
+    
+    document.getElementById('xyz').style.border = '1px solid #000'; 
+   
+    document.getElementById('xyzab').style.marginTop = '160px'; 
+    // This line searches for the element with the id 'xyzab' according to getElementById, but it doesn't find it, so create a div element and set the id of the element to xyzab, the implementation method:
+    // var xyzab = document. createElement('div');
+    // xyzab.id = 'xyzab';
+    // document.getElementsByTagName("body")[0].appendChild(xyzab);
+     
+    document.getElementById('xyza').style.color = 'white'; 
+    // This line searches for the element with the id 'xyza' according to getElementById, but it doesn't find it, so create a div element and set the id of the element to xyza, the implementation method:
+    // var xyza = document. createElement('div');
+    // xyza.id = 'xyza';
+    // document.getElementsByTagName("body")[0].appendChild(xyza);
+    
+    document.getElementById('xyzabc').style.border = '1px solid #123'; 
+    // This line searches for the element with the id 'xyzabc' according to getElementById, but it does not find it, so create a div element and set the id of the element to xyzabc, the implementation method:
+    // var xyzabc = document. createElement('div');
+    // xyzabc.id = 'xyzabc';
+    // document.getElementsByTagName("body")[0].appendChild(xyzabc);
+    
+    while (child.nodeName() !== 'span' && (p = child.parentNode));// For this while loop. I have lot of questions, 
+    //I didn't figure out what this line of code is for. Maybe it has its purpose, 
+    //but the lack of comments and other instructions makes me very confused about this code. 
+    //I didn't figure out what it use for, so I think it should be removed, but I'm not sure. 
+    
+    foo = obj[multiply(i, i - 3)];//// obj is not an array and cannot be subscripted with a number.
+    // It needs to obtain the corresponding key. The multiply function must be defined before calling,
+    // and the definition of multiply should be moved to the front
+    }
+    }
+    
+    const multiply = (x, y) => x * y;
+    //// Function definitions should come before uses, so should be moved above. 
+    //Because this function needs to be placed at the beginning of the program, 
+    //if it is not moved to the above context, the method cannot be called
+
+
+// Code after modify: please run it after comment out the old code unmodified above.
+let foo = 3;
+let bar = false;
+const multiply = (x, y) => x * y;
+
+if (foo == 3) {
+    var obj = {  
+        hello: 123, 
+        world: 456,
+        
+    };
+   
+    for (let i = 0; i<Object.keys(obj).length; ++i) {
+        var dom = document.createElement('div');
+        dom.id = 'xyz';
+        document.getElementsByTagName("body")[0].appendChild(dom);
+        document.getElementById('xyz').style.border = '1px solid #000'; 
+         
+        var xyza = document.createElement('div');
+        xyza.id = 'xyza';
+        document.getElementsByTagName("body")[0].appendChild(xyza);
+        document.getElementById('xyza').style.color = 'white'; 
+        document.getElementById('xyza').style.marginTop = '160px'; 
+         
+        var xyzab = document.createElement('div');
+        xyzab.id = 'xyzab';
+        document.getElementsByTagName("body")[0].appendChild(xyzab);
+        document.getElementById('xyzab').style.marginTop = '160px'; 
+         
+        var xyzabc = document.createElement('div');
+        xyzabc.id = 'xyzabc';
+        document.getElementsByTagName("body")[0].appendChild(xyzabc);
+        document.getElementById('xyzabc').style.border = '1px solid #7FFF0D'; 
+        
+        var currenti = 0;
+        var child = document.getElementsByTagName("body")[0].childNodes.length;
+       
+        
+            foo = obj[Object.keys(obj)[multiply(i, i-3)]];
+        
+    }
+}
+
+// After I modify this code. I still have a lot of confusion. 
+//I'm not sure if what I've done is correct. Some of the codes confuse me, 
+//I didn't find it's feature and mean. But I'm not sure if they have other feature or any use for,
+// but they need to be modified. So I think it is very important to write comments on the code, 
+//so that can help other developers to know what your code does when they see your code.
+
+//Does this code make sense? I think it makes sense but also doesn't make sense. 
+// Because this code uses js to manipulate DOM nodes and add style attributes to DOM nodes.
+// It also doesn't make sense because their have easy way to finish it's feature, and some of part are very confuse.
+    </script>
+</body>
+</html>
